@@ -17,4 +17,7 @@ func main() {
 	s = "AAABBCCY"
 	n = 1
 	fmt.Printf("s = %s ; n = %d => %s | zDdCcBbB\n", s, n, kata.PlayPass(s, n))
+
+	fmt.Println(kata.PlayPass("AZaz09!", 1))
+	fmt.Println(kata.PlayPass("BORN IN 2015!", 1))
 }
