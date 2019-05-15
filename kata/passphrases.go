@@ -1,9 +1,5 @@
 package kata
 
-import (
-	"fmt"
-)
-
 func find(a []rune, x rune) int {
 	for i, n := range a {
 		if x == n {
@@ -46,7 +42,6 @@ func PlayPass(s string, n int) string {
 		lettersRotation = append(lettersRotation, i)
 	}
 	nbLetters := len(lettersRotation)
-	fmt.Println(nbLetters)
 
 	// Steps 1 - 2 - 3 - 4
 	// -------------------
