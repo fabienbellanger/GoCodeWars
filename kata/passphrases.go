@@ -1,5 +1,9 @@
 package kata
 
+import (
+	"unicode"
+)
+
 func find(a []rune, x rune) int {
 	for i, n := range a {
 		if x == n {
@@ -18,13 +22,13 @@ func Reverse(r []rune) []rune {
 }
 
 // PlayPass transforms string
+//
+// 1. shift each letter by a given number but the transformed letter must be a letter (circular shift),
+// 2. replace each digit by its complement to 9,
+// 3. keep such as non alphabetic and non digit characters,
+// 4. downcase each letter in odd position, upcase each letter in even position (the first character is in position 0),
+// 5. reverse the whole result.
 func PlayPass(s string, n int) string {
-	// 1. shift each letter by a given number but the transformed letter must be a letter (circular shift),
-	// 2. replace each digit by its complement to 9,
-	// 3. keep such as non alphabetic and non digit characters,
-	// 4. downcase each letter in odd position, upcase each letter in even position (the first character is in position 0),
-	// 5. reverse the whole result.
-
 	runes := make([]rune, 0)
 
 	// A - Z : 65 - 90
@@ -51,17 +55,14 @@ func PlayPass(s string, n int) string {
 			letterIndex := find(lettersRotation, c)
 			newRune := lettersRotation[(letterIndex+n)%nbLetters]
 
-			if index%2 == 1 {
-				// Odd -> lowerCase
-				if c <= 90 {
-					newRune += 32
-				}
-			} else {
+			if index%2 == 0 && unicode.IsLower(newRune) {
 				// Even -> upperCase
-				if c >= 97 {
-					newRune -= 32
-				}
+				newRune = unicode.ToUpper(newRune)
+			} else if index%2 != 0 && unicode.IsUpper(newRune) {
+				// Odd -> lowerCase
+				newRune = unicode.ToLower(newRune)
 			}
+
 			runes = append(runes, newRune)
 		} else if c >= 48 && c <= 57 {
 			// Number
