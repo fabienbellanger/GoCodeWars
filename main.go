@@ -7,6 +7,7 @@ func main() {
 	// 8 kyu
 	// -----
 	// testPalindrome()
+	testTotalAmountOfPoint()
 
 	// 6 kyu
 	// -----
@@ -56,4 +57,12 @@ func testPalindrome() {
 	s = "aBbA"
 	b = kata.IsPalindrome(s)
 	fmt.Printf("%s | %t => %t\n", s, b, true)
+}
+
+func testTotalAmountOfPoint() {
+	m1 := []string{"1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"}
+	fmt.Printf("%d | %d\n", kata.Points(m1), 30)
+
+	m1 = []string{"0:1", "0:2", "0:3", "0:4", "1:2", "1:3", "1:4", "2:3", "2:4", "3:4"}
+	fmt.Printf("%d | %d\n", kata.Points(m1), 0)
 }
