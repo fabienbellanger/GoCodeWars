@@ -7,7 +7,8 @@ func main() {
 	// 8 kyu
 	// -----
 	// testPalindrome()
-	testTotalAmountOfPoint()
+	// testTotalAmountOfPoint()
+	testDeodorantEvaporator()
 
 	// 6 kyu
 	// -----
@@ -65,4 +66,21 @@ func testTotalAmountOfPoint() {
 
 	m1 = []string{"0:1", "0:2", "0:3", "0:4", "1:2", "1:3", "1:4", "2:3", "2:4", "3:4"}
 	fmt.Printf("%d | %d\n", kata.Points(m1), 0)
+}
+
+func testDeodorantEvaporator() {
+	c := 10.0
+	e := 10
+	t := 10
+	fmt.Printf("%d | %d\n", kata.Evaporator(c, e, t), 22)
+
+	c = 10.0
+	e = 10
+	t = 5
+	fmt.Printf("%d | %d\n", kata.Evaporator(c, e, t), 29)
+
+	c = 100.0
+	e = 5
+	t = 5
+	fmt.Printf("%d | %d\n", kata.Evaporator(c, e, t), 59)
 }
