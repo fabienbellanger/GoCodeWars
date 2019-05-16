@@ -8,14 +8,21 @@ func main() {
 	// -----
 	// testPalindrome()
 	// testTotalAmountOfPoint()
-	testDeodorantEvaporator()
+
+	// 7 kyu
+	// -----
+	// testDeodorantEvaporator()
 
 	// 6 kyu
 	// -----
 	// testPassPhrases()
+	testPianoKataPart1()
 }
 
 func testPassPhrases() {
+	fmt.Println("\n6 - PassPhrases")
+	fmt.Printf("---------------\n")
+
 	var s string
 	var n int
 
@@ -36,6 +43,9 @@ func testPassPhrases() {
 }
 
 func testPalindrome() {
+	fmt.Println("\n8 - Palindrome")
+	fmt.Printf("--------------\n")
+
 	var s string
 	var b bool
 
@@ -61,6 +71,9 @@ func testPalindrome() {
 }
 
 func testTotalAmountOfPoint() {
+	fmt.Println("\n8 - TotalAmountOfPoint")
+	fmt.Printf("----------------------\n")
+
 	m1 := []string{"1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"}
 	fmt.Printf("%d | %d\n", kata.Points(m1), 30)
 
@@ -69,6 +82,9 @@ func testTotalAmountOfPoint() {
 }
 
 func testDeodorantEvaporator() {
+	fmt.Println("\n7 - TotalAmountOfPoint")
+	fmt.Printf("----------------------\n")
+
 	c := 10.0
 	e := 10
 	t := 10
@@ -83,4 +99,22 @@ func testDeodorantEvaporator() {
 	e = 5
 	t = 5
 	fmt.Printf("%d | %d\n", kata.Evaporator(c, e, t), 59)
+}
+
+func testPianoKataPart1() {
+	fmt.Println("\n6 - PianoKataPart1")
+	fmt.Printf("------------------\n")
+
+	fmt.Printf("%s | %s\n", kata.BlackOrWhiteKey(0), "white")
+	fmt.Printf("%s | %s\n", kata.BlackOrWhiteKey(1), "white")
+	fmt.Printf("%s | %s\n", kata.BlackOrWhiteKey(5), "black")
+	fmt.Printf("%s | %s\n", kata.BlackOrWhiteKey(12), "black")
+	fmt.Printf("%s | %s\n", kata.BlackOrWhiteKey(42), "white")
+	fmt.Printf("%s | %s\n", kata.BlackOrWhiteKey(88), "white")
+	fmt.Printf("%s | %s\n", kata.BlackOrWhiteKey(89), "white")
+	fmt.Printf("%s | %s\n", kata.BlackOrWhiteKey(92), "white")
+	fmt.Printf("%s | %s\n", kata.BlackOrWhiteKey(100), "black")
+	fmt.Printf("%s | %s\n", kata.BlackOrWhiteKey(111), "white")
+	fmt.Printf("%s | %s\n", kata.BlackOrWhiteKey(200), "black")
+	fmt.Printf("%s | %s\n", kata.BlackOrWhiteKey(2017), "white")
 }
